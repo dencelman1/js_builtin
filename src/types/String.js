@@ -1,5 +1,4 @@
-import crypto from 'crypto';
-import {ceil} from "#utils/general";
+import {createHmac, randomBytes} from 'node:crypto';
 
 export default () => (
     (
@@ -22,7 +21,7 @@ export default () => (
             
             return (
                 (
-                    crypto.createHmac('sha512', (
+                    createHmac('sha512', (
                         salt ||= this.generateSalt()
                     ))
                     .update(this)
@@ -38,8 +37,8 @@ export default () => (
             
     
             return (
-                crypto.randomBytes(
-                    ceil(
+                randomBytes(
+                    Math.ceil(
                         (rounds ||= 6) / 2
                     )
                 )

@@ -1,0 +1,9 @@
+{
+    "name": "js_builtin_back",
+    "version": "1.0.1",
+    "main": "./src/index.js",
+    "type": "module",
+    "scripts": {},
+    "license": "MIT"
+  }
+  
