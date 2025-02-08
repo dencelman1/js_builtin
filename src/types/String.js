@@ -1,8 +1,9 @@
 import {createHmac, randomBytes} from 'node:crypto';
 
-export default () => (
-    (
-        String.prototype.saltHashOf = function(s) {
+export default () => {
+    var p = String.prototype
+    return ((
+        p.saltHashOf = function(s) {
             return (
                 (
                     this
@@ -14,10 +15,9 @@ export default () => (
                 )
             )
         }
-    )
-    &&
+    ),
     (
-        String.prototype.saltHash = function(salt) {
+        p.saltHash = function(salt) {
             
             return (
                 (
@@ -30,10 +30,9 @@ export default () => (
                 + salt
             );
         }
-    )
-    &&
+    ),
     (
-        String.prototype.generateSalt = function(rounds) {
+        p.generateSalt = function(rounds) {
             
     
             return (
@@ -46,5 +45,5 @@ export default () => (
                 .slice(0, rounds)
             );
         }
-    )
-)
+    ));
+}
