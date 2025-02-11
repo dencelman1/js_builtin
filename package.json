@@ -1,6 +1,7 @@
 {
     "name": "js_builtin_back",
     "version": "1.0.1",
+    "link":true,
     "main": "./src/index.js",
     "type": "module",
     "scripts": {},
